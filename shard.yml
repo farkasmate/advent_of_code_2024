@@ -1,0 +1,13 @@
+name: advent_of_code_2024
+version: 0.1.0
+
+authors:
+  - Mate Farkas <y2k.elma@gmail.com>
+
+targets:
+  advent_of_code_2024:
+    main: src/advent_of_code_2024.cr
+
+crystal: '>= 1.14.0'
+
+license: MIT
