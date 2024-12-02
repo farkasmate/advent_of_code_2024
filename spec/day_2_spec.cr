@@ -14,4 +14,8 @@ describe "#day_2" do
   it "solves example" do
     day_2(example).should eq(2)
   end
+
+  it "solves updated example" do
+    day_2b(example).should eq(4)
+  end
 end
