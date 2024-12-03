@@ -5,3 +5,4 @@ require "./*"
 #puts day_2(File.read("./inputs/day_2.input"))
 #puts day_2b(File.read("./inputs/day_2.input"))
 puts day_3(File.read("./inputs/day_3.input"))
+puts day_3b(File.read("./inputs/day_3.input"))
