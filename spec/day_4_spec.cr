@@ -18,4 +18,8 @@ describe "#day_4" do
   it "solves example" do
     day_4(example).should eq(18)
   end
+
+  it "solves updated example" do
+    day_4b(example).should eq(9)
+  end
 end

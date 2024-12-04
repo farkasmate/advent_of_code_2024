@@ -7,3 +7,4 @@ require "./*"
 # puts day_3(File.read("./inputs/day_3.input"))
 # puts day_3b(File.read("./inputs/day_3.input"))
 puts day_4(File.read("./inputs/day_4.input"))
+puts day_4b(File.read("./inputs/day_4.input"))

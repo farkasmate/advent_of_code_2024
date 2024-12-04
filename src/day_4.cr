@@ -30,6 +30,22 @@ struct WordSearch
       yield diagonal.join.strip('-')
     end
   end
+
+  def each_x
+    @data.each_cons(3) do |cons_rows|
+      cons_rows.transpose.each_cons(3) do |cons_colums|
+        x = cons_colums.transpose
+
+        # Apply X mask
+        x[0][1] = '.'
+        x[1][0] = '.'
+        x[1][2] = '.'
+        x[2][1] = '.'
+
+        yield x
+      end
+    end
+  end
 end
 
 def day_4(input : String) : Int32
@@ -45,6 +61,39 @@ def day_4(input : String) : Int32
   word_search.each_column { |line| xmas_proc.call line }
   word_search.each_se_diagonal { |line| xmas_proc.call line }
   word_search.each_sw_diagonal { |line| xmas_proc.call line }
+
+  return count
+end
+
+def day_4b(input : String) : Int32
+  word_search = WordSearch.new(input)
+
+  count = 0
+  word_search.each_x do |x|
+    x.each { |line| Log.debug { line } }
+    Log.debug { "---" }
+
+    count += 1 if x == [
+                    ['M', '.', 'S'],
+                    ['.', 'A', '.'],
+                    ['M', '.', 'S'],
+                  ] ||
+                  x == [
+                    ['M', '.', 'M'],
+                    ['.', 'A', '.'],
+                    ['S', '.', 'S'],
+                  ] ||
+                  x == [
+                    ['S', '.', 'M'],
+                    ['.', 'A', '.'],
+                    ['S', '.', 'M'],
+                  ] ||
+                  x == [
+                    ['S', '.', 'S'],
+                    ['.', 'A', '.'],
+                    ['M', '.', 'M'],
+                  ]
+  end
 
   return count
 end
