@@ -17,3 +17,4 @@ Log.setup_from_env
 # puts day_6(File.read("./inputs/day_6.input"))
 # puts day_6b(File.read("./inputs/day_6.input"))
 puts day_7(File.read("./inputs/day_7.input"))
+puts day_7b(File.read("./inputs/day_7.input"))

@@ -38,3 +38,22 @@ def day_7(input : String) : Int64
 
   return sum
 end
+
+def day_7b(input : String) : Int64
+  calibration = Calibration.new(input)
+
+  Log.debug { calibration }
+
+  sum = 0_i64
+  calibration.equations.each do |equation|
+    possible_values = [equation.values.reduce { |acc, i|
+      [acc].flatten.map do |x|
+        [x + i, x * i, (x.to_s + i.to_s).to_i64]
+      end
+    }].flatten
+
+    sum += equation.result if possible_values.includes? equation.result
+  end
+
+  return sum
+end

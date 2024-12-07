@@ -17,4 +17,8 @@ describe "#day_7" do
   it "solves example" do
     day_7(example).should eq(3749)
   end
+
+  it "solves updated example" do
+    day_7b(example).should eq(11387)
+  end
 end
